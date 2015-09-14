@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>Help Aunt Jean</title>
+        <link rel = "shortcut icon"  type = "image/x-icon" href = "favicon.ico" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../scripts/jquery-1.11.3.min.js"><\/script>');</script>
+        <script src="../scripts/database_access.js"></script>
+        <script src="bin/phaser.js"></script>
+        <script src="src/boot.js"></script>
+        <script src="src/preload.js"></script>
+        <script src="src/gameover.js"></script>
+        <script src="src/restart.js"></script>
+        <script src="src/wingame.js"></script>
+        <script src="src/menu.js"></script>
+        <script src="src/main.js"></script>
+    </head>
+
+    <body>
+        <script>
+            window.onload = function () {
+                game = new Phaser.Game(Game.w, Game.h, Phaser.CANVAS);
+                //create game states
+                game.state.add('boot', BasicGame.Boot);
+                game.state.add('preload', BasicGame.Preload);
+                game.state.add('openscreen', BasicGame.Open);
+                game.state.add('win', BasicGame.win);
+                game.state.add('lose', BasicGame.lose);
+                game.state.add('restart', BasicGame.restart);
+                game.state.add('game', BasicGame.play);
+                //start boot game state 
+                //procedure is boot -> preload -> openscreen -> game -> win/lose -> next page
+                game.state.start('boot');
+            };
+        </script>
+    </body>
+</html>
