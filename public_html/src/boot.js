@@ -8,17 +8,16 @@
 /* global Phaser */
 'use strict';
 
-var BasicGame = {},
-tileSize = 8,
-dRows = 80,
-dCols = 120,
+var tileSize = 8,
+_rows = 80,
+_cols = 120,
 player,
 dialogue;
 
-var Game = {
+var BasicGame = {
     //game width and height is based on the .tmx properties
-    w: tileSize * dCols,
-    h: tileSize * dRows,
+    w: tileSize * _cols,
+    h: tileSize * _rows,
     lastLocation: 'level1', //keep track of last location player was in
     level: 1, //keep track of the level
     camera: {
