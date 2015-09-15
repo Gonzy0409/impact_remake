@@ -5,7 +5,7 @@
  * @Overview
  * Player class
  */
-/* global Phaser, BasicGame, tileSize */
+/* global Phaser, BasicGame, tileSize, dialogue */
 'use strict';
 
 var wKey;
@@ -78,14 +78,11 @@ Player.prototype = {
 
         this.sprite.animations.add("chopleft", ["sam_chop16.png", "sam_chop16.png", "sam_chop16.png", "sam_chop16.png",
             "sam_chop16.png", "sam_chop16.png", "sam_chop16.png", "sam_chop16.png"], 15, true, false);
-
-
     },
     update: function () {
 
         this.movements();
         this.updatecamera();
-
     },
     updatecamera: function () {
         if (this.tweening) {

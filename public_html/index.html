@@ -22,7 +22,7 @@
     <body>
         <script>
             window.onload = function () {
-                game = new Phaser.Game(Game.w, Game.h, Phaser.CANVAS);
+                var game = new Phaser.Game(BasicGame.w, BasicGame.h, Phaser.CANVAS);
                 //create game states
                 game.state.add('boot', BasicGame.Boot);
                 game.state.add('preload', BasicGame.Preload);
